@@ -2,8 +2,12 @@ const path = require("path");
 const express = require("express");
 
 const app = express();
-console.log(__dirname);
-console.log(path.join(__dirname, ".."));
+/*console.log(__dirname);
+console.log(path.join(__dirname, ".."));*/
+
+const publicDirectory = path.join(__dirname, "../public");
+app.use(express.static(publicDirectory));
+
 app.get("/help", (req, res) => {
   res.send("Help page");
 });
