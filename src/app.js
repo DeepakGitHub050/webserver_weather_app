@@ -6,6 +6,7 @@ const app = express();
 console.log(path.join(__dirname, ".."));*/
 
 const publicDirectory = path.join(__dirname, "../public");
+app.set("view engine", "hbs");
 app.use(express.static(publicDirectory));
 
 app.get("/help", (req, res) => {
