@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DeepakGitHub050/webserver_weather_app/issues"
   },
-  "homepage": "https://github.com/DeepakGitHub050/webserver_weather_app#readme"
+  "homepage": "https://github.com/DeepakGitHub050/webserver_weather_app#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
