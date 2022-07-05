@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+body{
+   background-color: lightblue;
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+.container.left_side{
+    position: relative;
+    background: yellow;
+    padding: 40px;
+}
