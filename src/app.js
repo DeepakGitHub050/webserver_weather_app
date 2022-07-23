@@ -10,7 +10,10 @@ app.set("view engine", "hbs");
 app.use(express.static(publicDirectory));
 
 app.get("", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    title: "Weather App",
+    name: "Deepak Kumar Sharma",
+  });
 });
 
 app.get("/help", (req, res) => {
