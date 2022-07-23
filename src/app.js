@@ -12,7 +12,7 @@ app.use(express.static(publicDirectory));
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    name: "Deepak Kumar Sharma 124",
+    name: "Deepak Kumar Sharma",
   });
 });
 
