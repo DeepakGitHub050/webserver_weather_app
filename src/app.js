@@ -17,7 +17,10 @@ app.get("", (req, res) => {
 });
 
 app.get("/help", (req, res) => {
-  res.send("Help page");
+  res.send("Help page", {
+    title: "Help title",
+    name: "Help doc page",
+  });
 });
 
 app.get("/About", (req, res) => {
