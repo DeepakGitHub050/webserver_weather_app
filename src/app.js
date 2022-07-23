@@ -17,14 +17,14 @@ app.get("", (req, res) => {
 });
 
 app.get("/help", (req, res) => {
-  res.send("Help page", {
+  res.render("help", {
     title: "Help title",
     name: "Help doc page",
   });
 });
 
 app.get("/About", (req, res) => {
-  res.send({ name: "DKS", age: 25 });
+  res.render("about", { title: "About page", name: "DKS", age: 25 });
 });
 
 app.get("/weather", (req, res) => {
