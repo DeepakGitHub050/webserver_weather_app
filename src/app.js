@@ -1,14 +1,21 @@
 const path = require("path");
 const express = require("express");
+const hbs = require("hbs");
 
 const app = express();
 /*console.log(__dirname);
 console.log(path.join(__dirname, ".."));*/
 
+//defined paths for expess config
 const publicDirectory = path.join(__dirname, "../public");
-const viewPath = path.join(__dirname, "../templates");
+const viewPath = path.join(__dirname, "../templates/views");
+const partialsPath = path.join(__dirname, "../templates/partials");
+
+//setup handle bars and views location
 app.set("view engine", "hbs");
 app.set("views", viewPath);
+
+//setup static directory to serve
 app.use(express.static(publicDirectory));
 
 app.get("", (req, res) => {
