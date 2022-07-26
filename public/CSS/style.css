@@ -1,3 +1,21 @@
-h1{
-    color: blue;
+body{
+color: #333333;
+font-family: Arial, Helvetica, sans-serif;
+max-width: fit-content;
+margin: 0 auto;
+padding: 0 16px;
+}
+
+footer{
+color: #888888;
+border-top: 1px solid #eeeeee;
+margin-top: 16px;
+padding-top: 16px 0;
+}
+
+header{
+    color: #888888;
+    border-top: 1px solid #eeeeee;
+    margin-top: 16px;
+    padding-top: 16px 0;
 }
