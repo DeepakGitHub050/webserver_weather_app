@@ -41,6 +41,14 @@ app.get("/weather", (req, res) => {
   res.send("Weather details:");
 });
 
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    name: "DKS",
+    errorMessage: "Page not found",
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server has started on port 3000");
 });
