@@ -14,7 +14,7 @@ const partialsPath = path.join(__dirname, "../templates/partials");
 //setup handle bars and views location
 app.set("view engine", "hbs");
 app.set("views", viewPath);
-hbs.registerPartial(partialsPath);
+hbs.registerPartials(partialsPath);
 
 //setup static directory to serve
 app.use(express.static(publicDirectory));
