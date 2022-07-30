@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
+const GetWeather = require("GetWeather");
 
 const app = express();
 /*console.log(__dirname);
@@ -38,7 +39,27 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
-  res.send("Weather details:");
+  if (!req.query.address) {
+    return res.send({
+      error: "You must provie address",
+    });
+  }
+  const url =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    req.query.address +
+    "&APPID=62b4ca8c3ab560e2742636ac825805d5&units=metric";
+  GetWeather.getWeather(url, (error, data) => {
+    if (error) {
+      return res.send({ error });
+    } else {
+      return res.send({ data });
+    }
+  });
+});
+
+app.get("/product", (req, res) => {
+  console.log(req.query);
+  res.send({ products: [] });
 });
 
 app.get("*", (req, res) => {
