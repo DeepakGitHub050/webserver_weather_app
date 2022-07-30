@@ -50,9 +50,9 @@ app.get("/weather", (req, res) => {
     "&APPID=62b4ca8c3ab560e2742636ac825805d5&units=metric";
   getWeather(url, (error, data) => {
     if (error) {
-      return res.send({ error });
+      res.send({ error });
     } else {
-      return res.send({ data });
+      res.send({ data });
     }
   });
 });

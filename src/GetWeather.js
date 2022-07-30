@@ -1,8 +1,12 @@
+const request = require("request");
+
 const getWeather = (url, callback) => {
   request({ url, json: true }, (error, { body }) => {
     //uses Es6 Destructuring property
-    if (error) {
+    if (error || body == undefined) {
       callback("Unable to connect to Weather server");
+    } else if (body.name == undefined) {
+      callback("Unable to Find location");
     } else {
       const data = body; //////used Es6 Destructing property
       const { sys, main, visibility } = data;
@@ -14,21 +18,16 @@ const getWeather = (url, callback) => {
         Humidity = humidity,
         Visibility = visibility;
       //console.log(data.main);
-      callback(
-        "Country: " +
-          country +
-          " city: " +
-          city +
-          " Temperature: " +
-          temperature +
-          "℃  Pressure: " +
-          pressure +
-          "mbar Humidity: " +
-          humidity +
-          "% Visibility: " +
-          Visibility +
-          "km"
-      );
+      callback("", {
+        "Country ": country,
+        " city ": city,
+        " Temperature ": temperature,
+        "℃  Pressure ": Pressure,
+        "mbar Humidity ": Humidity,
+        "% Visibility ": Visibility + "km",
+      });
     }
   });
 };
+
+module.exports = getWeather;
