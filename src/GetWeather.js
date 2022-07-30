@@ -3,7 +3,7 @@ const request = require("request");
 const getWeather = (url, callback) => {
   request({ url, json: true }, (error, { body }) => {
     //uses Es6 Destructuring property
-    if (error || body == undefined) {
+    if (error) {
       callback("Unable to connect to Weather server");
     } else if (body.name == undefined) {
       callback("Unable to Find location");
